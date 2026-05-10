@@ -170,5 +170,3 @@ Phase 5: Create `section-builder` Claude Code skill.
 ---
 
 **Status**: Phase 1 Foundation complete. Dev server running. Live editing workflow proven.
-
-For comprehensive documentation, see `~/kratner-brain/projects/hulalo.md` or `~/keithratner-wp/Conversations/`.
