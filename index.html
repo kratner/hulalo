@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hulalo — Motion Section Builder</title>
+    <link rel="stylesheet" href="/sections/_base/base.css" />
+    <link rel="stylesheet" href="/app/styles/app.css" />
+  </head>
+  <body>
+    <div id="app" class="app-container">
+      <!-- Left Panel: Section Library -->
+      <aside class="app-sidebar">
+        <div class="sidebar-header">
+          <h1 class="sidebar-title">Sections</h1>
+        </div>
+        <ul class="section-list" id="section-list">
+          <!-- Populated by main.js -->
+        </ul>
+      </aside>
+
+      <!-- Center: Preview -->
+      <main class="app-main">
+        <div class="preview-header">
+          <div class="breakpoint-toggle">
+            <button class="breakpoint-btn" data-breakpoint="mobile" title="Mobile (390px)">
+              📱 Mobile
+            </button>
+            <button class="breakpoint-btn" data-breakpoint="tablet" title="Tablet (768px)">
+              📗 Tablet
+            </button>
+            <button class="breakpoint-btn active" data-breakpoint="desktop" title="Desktop (1440px)">
+              🖥️ Desktop
+            </button>
+          </div>
+        </div>
+        <div class="preview-container">
+          <iframe
+            id="preview-iframe"
+            class="preview-iframe"
+            src="about:blank"
+            sandbox="allow-scripts allow-same-origin"
+          ></iframe>
+        </div>
+        <div class="timeline-scrubber-container">
+          <label for="timeline-scrubber" class="scrubber-label">Timeline</label>
+          <input
+            id="timeline-scrubber"
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            class="timeline-scrubber"
+          />
+          <div class="scrubber-controls">
+            <button id="play-btn" class="scrubber-btn" title="Play">▶️ Play</button>
+            <button id="pause-btn" class="scrubber-btn" title="Pause">⏸️ Pause</button>
+            <button id="reset-btn" class="scrubber-btn" title="Reset">↺ Reset</button>
+          </div>
+        </div>
+      </main>
+
+      <!-- Right Panel: Inspector -->
+      <aside class="app-inspector">
+        <div class="inspector-header">
+          <h2 class="inspector-title">Inspector</h2>
+        </div>
+        <div class="inspector-content">
+          <div class="inspector-section">
+            <h3 class="inspector-heading">Section Info</h3>
+            <div id="section-info" class="section-info">
+              <p class="placeholder">Select a section to inspect</p>
+            </div>
+          </div>
+          <div class="inspector-section">
+            <h3 class="inspector-heading">Export</h3>
+            <div class="export-buttons">
+              <button id="export-html-btn" class="export-btn" title="Export as HTML">
+                📄 HTML
+              </button>
+              <button id="export-webp-btn" class="export-btn" title="Export as WebP">
+                🖼️ WebP
+              </button>
+              <button id="export-video-btn" class="export-btn" title="Export as Video">
+                🎬 Video
+              </button>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <script type="module" src="/app/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,170 @@
+<!--
+---
+id: hero
+type: hero
+title: Hero Section
+description: Full-viewport hero with headline, subheadline, CTA, and background
+variants: [dark, light]
+motion: scroll-triggered
+responsive: [mobile, tablet, desktop]
+export-formats: [html, webp, mp4]
+---
+-->
+<section data-hulalo-id="hero" data-hulalo-type="hero" class="hulalo-section hero-section">
+  <div class="hero-background"></div>
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1 class="hero-headline">Build Faster, Create Smarter</h1>
+      <p class="hero-subheadline">Responsive motion sections with production-ready code</p>
+      <a href="#" class="hero-cta">Get Started</a>
+    </div>
+  </div>
+
+  <style>
+    [data-hulalo-id="hero"] {
+      /* Full viewport, responsive padding */
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: clamp(var(--space-lg), 10vw, var(--space-3xl)) var(--space-md);
+    }
+
+    [data-hulalo-id="hero"].hero-dark {
+      background: #0a0e27;
+      color: #fff;
+    }
+
+    [data-hulalo-id="hero"].hero-light {
+      background: #f8f9fa;
+      color: #0a0e27;
+    }
+
+    [data-hulalo-id="hero"] .hero-background {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at 50% 50%,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 70%
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    [data-hulalo-id="hero"] .hero-container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    [data-hulalo-id="hero"] .hero-content {
+      text-align: center;
+    }
+
+    [data-hulalo-id="hero"] .hero-headline {
+      font-size: var(--type-5xl);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: var(--space-md);
+      letter-spacing: -0.02em;
+    }
+
+    [data-hulalo-id="hero"] .hero-subheadline {
+      font-size: var(--type-xl);
+      font-weight: 400;
+      line-height: 1.6;
+      margin-bottom: var(--space-xl);
+      opacity: 0.8;
+    }
+
+    [data-hulalo-id="hero"] .hero-cta {
+      display: inline-block;
+      padding: var(--space-sm) var(--space-lg);
+      background: #2563eb;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: var(--type-base);
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    [data-hulalo-id="hero"] .hero-cta:hover {
+      background: #1d4ed8;
+    }
+
+    [data-hulalo-id="hero"].hero-dark .hero-cta {
+      background: #3b82f6;
+    }
+
+    [data-hulalo-id="hero"].hero-dark .hero-cta:hover {
+      background: #2563eb;
+    }
+
+    [data-hulalo-id="hero"].hero-light .hero-cta {
+      background: #2563eb;
+    }
+
+    [data-hulalo-id="hero"].hero-light .hero-cta:hover {
+      background: #1d4ed8;
+    }
+
+    /* Mobile: single column, stacked */
+    @media (max-width: 479px) {
+      [data-hulalo-id="hero"] .hero-headline {
+        font-size: var(--type-3xl);
+      }
+
+      [data-hulalo-id="hero"] .hero-subheadline {
+        font-size: var(--type-lg);
+      }
+    }
+  </style>
+
+  <script type="module">
+    import { createSectionTimeline } from '../../sections/_base/motion.js';
+
+    const tl = createSectionTimeline("hero", {
+      paused: true,
+      duration: 0.8
+    });
+
+    // Staggered entrance: headline → subheadline → CTA
+    tl.from(".hero-headline", {
+      y: 40,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power2.out"
+    })
+      .from(
+        ".hero-subheadline",
+        {
+          y: 30,
+          opacity: 0,
+          duration: 0.6,
+          ease: "power2.out"
+        },
+        "-=0.4"
+      )
+      .from(
+        ".hero-cta",
+        {
+          y: 20,
+          opacity: 0,
+          duration: 0.5,
+          ease: "back.out(1.2)"
+        },
+        "-=0.3"
+      );
+
+    // Register for editor + export
+    window.__hulalo = window.__hulalo || {};
+    window.__hulalo["hero"] = tl;
+  </script>
+</section>

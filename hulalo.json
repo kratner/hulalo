@@ -1,0 +1,60 @@
+{
+  "version": "1.0.0",
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Hero",
+      "path": "sections/hero/hero.html",
+      "type": "hero",
+      "description": "Full-viewport hero with headline, subheadline, CTA, and background",
+      "variants": ["dark", "light"],
+      "responsive": ["mobile", "tablet", "desktop"],
+      "motion": "scroll-triggered",
+      "exportFormats": ["html", "webp", "mp4"]
+    },
+    {
+      "id": "features",
+      "name": "Features",
+      "path": "sections/features/features.html",
+      "type": "features",
+      "description": "Feature cards grid with staggered animation",
+      "variants": ["dark", "light"],
+      "responsive": ["mobile", "tablet", "desktop"],
+      "motion": "scroll-triggered",
+      "exportFormats": ["html", "webp", "mp4"]
+    },
+    {
+      "id": "testimonials",
+      "name": "Testimonials",
+      "path": "sections/testimonials/testimonials.html",
+      "type": "testimonials",
+      "description": "Testimonial carousel or grid with quote animation",
+      "variants": ["dark", "light"],
+      "responsive": ["mobile", "tablet", "desktop"],
+      "motion": "scroll-triggered",
+      "exportFormats": ["html", "webp", "mp4"]
+    },
+    {
+      "id": "cta",
+      "name": "CTA",
+      "path": "sections/cta/cta.html",
+      "type": "cta",
+      "description": "Call-to-action section with scale-in and pulse animations",
+      "variants": ["dark", "light"],
+      "responsive": ["mobile", "tablet", "desktop"],
+      "motion": "scroll-triggered",
+      "exportFormats": ["html", "webp", "mp4"]
+    },
+    {
+      "id": "split",
+      "name": "Split",
+      "path": "sections/split/split.html",
+      "type": "split",
+      "description": "Image and text side-by-side with slide and fade animations",
+      "variants": ["image-left", "image-right"],
+      "responsive": ["mobile", "tablet", "desktop"],
+      "motion": "scroll-triggered",
+      "exportFormats": ["html", "webp", "mp4"]
+    }
+  ]
+}
